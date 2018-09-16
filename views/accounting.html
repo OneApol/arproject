@@ -154,7 +154,7 @@
 	      	<!-- the following divs are temporary -->
 
 	      	<!-- client selection start -->
-	      	<div>
+	      	<div hidden>
 	      		<h5>Client Selection</h5>
 	      		<em>You can create a record for new clients or you can search for an existing client.</em>
 	      		<hr>
@@ -195,6 +195,33 @@
 				</table>
 	      	</div>
 	      	<!-- client selection end -->
+
+	      	<!-- client selection, confirmation start -->
+	      	<div>
+	      		<strong>Name: </strong> {{name}}<br>
+	      		<strong>Type: </strong> {{type}}<br>
+	      		<br>
+	      		<strong>TIN: </strong> {{tin}}<br>
+	      		<strong>Term: </strong> {{term}}<br>
+	      		<br>
+	      		<strong>Addresses: </strong>
+	      		<ul>
+	      			<li>Address 1</li>
+	      		</ul>
+	      		<strong>Contact Numbers: </strong>
+	      		<ul>
+		      		<li>123-4567 (Tel)</li>
+		      		<li>1234-567-8910 (Mobile, SMART)</li>
+		      		<li>0198-765-4321 (Mobile, Globe)</li>
+	      		</ul>
+	      		<strong>Contact Persons: </strong>
+	      		<ul>
+	      			<li>Dela Cruz, Juan</li>
+	      			<li>Dalisay, Cardo</li>
+	      		</ul>
+	      	</div>
+	      	<!-- client selection, confirmation end -->
+
 	      </div>
 	      <div class="modal-footer">
 	        <button class="btn btn-primary">Proceed</button>
