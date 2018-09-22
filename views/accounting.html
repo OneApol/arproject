@@ -68,7 +68,7 @@
 					      <a class="dropdown-item" href="#">Client TIN</a>
 					    </div>
 					  </div>
-					  <input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="Enter a filter here">
+					  <input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="Enter a filter here" name="billingFilter">
 					</div>
 				</div>
 
@@ -150,6 +150,7 @@
 	          <span aria-hidden="true">&times;</span>
 	        </button>
 	      </div>
+	      <!-- modal body start -->
 	      <div class="modal-body">
 	      	<!-- the following divs are temporary -->
 
@@ -172,7 +173,7 @@
 				      <a class="dropdown-item" href="#">TIN</a>
 				    </div>
 				  </div>
-				  <input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="Search for an existing client">
+				  <input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="Search for an existing client" name="newBillingClientSearch">
 				</div>
 				<br>
 	      		<table class="table table-striped border-bottom">
@@ -197,7 +198,7 @@
 	      	<!-- client selection end -->
 
 	      	<!-- client selection, confirmation start -->
-	      	<div>
+	      	<div hidden>
 	      		<strong>Name: </strong> {{name}}<br>
 	      		<strong>Type: </strong> {{type}}<br>
 	      		<br>
@@ -222,7 +223,87 @@
 	      	</div>
 	      	<!-- client selection, confirmation end -->
 
+	      	<!-- additional info start -->
+	      	<div hidden>
+	      		<div class="row">
+	      			<div class="col">
+	      				<label for="newBillingAr">AR no.</label>
+						<input type="text" name="newBillingAr" id="newBillingAr" class="form-control">
+	      			</div>
+	      			<div class="col">
+	      				<label for="newBillingSi">SI no.</label>
+						<input type="text" name="newBillingSi" id="newBillingSi" class="form-control">	
+	      			</div>
+	      		</div>
+	      		<br>
+				<label for="newBillingDate">Date Issued</label>
+				<input type="date" name="newBillingDate" id="newBillingDate" class="form-control">
+	      	</div>
+	      	<!-- additional info end -->
+
+	      	<!-- item select start -->
+	      	<div>
+	      		<h4>Billing Items</h4>
+	      		<hr>
+	      		<h5>Item Search</h5>
+	      		<em>Search for items to be put into the item cart.</em>
+	      		<br><br>
+	      		<div class="input-group mb-3">
+				  	<div class="input-group-prepend">
+				    	<span class="input-group-text" id="basic-addon1">
+				    		<i class="fas fa-filter"></i>
+				    	</span>
+				  	</div>
+				  	<input type="text" class="form-control" placeholder="Enter item description filter here" aria-label="Filter" aria-describedby="basic-addon1">
+				</div>
+				<div class="border-left border-right">
+					<table class="table table-striped border-bottom">
+					  <thead>
+					    <tr>
+					      <th scope="col">Description</th>
+					      <th scope="col">Unit</th>
+					      <th scope="col">Unit Price</th>
+					    </tr>
+					  </thead>
+					  <tbody>
+					    <tr>
+					      <td>Item A</td>
+					      <td>pc</td>
+					      <td>P100.00</td>
+					    </tr>
+					  </tbody>
+					</table>
+				</div>
+				<button type="button" class="btn btn-block btn-primary">Add New Pricing</button>
+				<hr>
+				<h5>Item Cart</h5>
+	      		<em>Search for items to be put into the shopping cart.</em>
+	      		<br><br>
+	      		<div class="border-left border-right">
+					<table class="table table-striped border-bottom">
+					  <thead>
+					    <tr>
+					      <th scope="col">Description</th>
+					      <th scope="col">Unit Price</th>
+					      <th scope="col">Quantity</th>
+					      <th scope="col">Amount</th>
+					    </tr>
+					  </thead>
+					  <tbody>
+					    <tr>
+					      <td>Item A</td>
+					      <td>P100.00</td>
+					      <td>5 pc</td>
+					      <td>P500.00</td>
+					    </tr>
+					  </tbody>
+					</table>
+				</div>
+				<strong>Grand total: </strong> P500.00
+	      	</div>
+	      	<!-- item select end -->
 	      </div>
+	      <!-- modal body end -->
 	      <div class="modal-footer">
 	        <button class="btn btn-primary">Proceed</button>
 	      </div>
