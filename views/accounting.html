@@ -40,7 +40,7 @@
 	  </div>
 	</nav>
 
-	<!-- main container -->
+	<!-- main container start -->
 	<div class="container-fluid">
 		<!-- tabs - tab is currently at billing -->
 		<ul class="nav nav-tabs">
@@ -53,7 +53,8 @@
 		</ul>
 		<div class="container-fluid border border-top-0 rounded-bottom">
 			<br>
-			<!-- dashboard -->
+			
+			<!-- dashboard start-->
 			<div class="row">
 				<!-- filters -->
 				<div class="col col-md-4">
@@ -79,10 +80,11 @@
 					</button>
 				</div>
 			</div>
-
+			<!-- dashboard end -->
+			
 			<br>
 
-			<!-- content -->
+			<!-- content start -->
 			<div class="row">
 				<table class="table table-striped border-bottom">
 				  <thead>
@@ -137,10 +139,12 @@
 				  </tbody>
 				</table>
 			</div>
+			<!-- content end -->
 		</div>
 	</div>
+	<!-- main container end -->
 
-	<!-- modal for new billing -->
+	<!-- new billing modal start -->
 	<div class="modal fade" id="newBillingModal" tabindex="-1" role="dialog" aria-labelledby="newBillingModalLabel" aria-hidden="true">
 	  <div class="modal-dialog modal-lg" role="document">
 	    <div class="modal-content">
@@ -242,7 +246,7 @@
 	      	<!-- additional info end -->
 
 	      	<!-- item select start -->
-	      	<div>
+	      	<div hidden>
 	      		<h4>Billing Items</h4>
 	      		<hr>
 	      		<h5>Item Search</h5>
@@ -302,6 +306,45 @@
 				<strong>Grand total: </strong> P500.00
 	      	</div>
 	      	<!-- item select end -->
+	      	<!-- summary start -->
+	      	<div>
+	      		<h5>Summary</h5>
+	      		<hr>
+	      		<strong>AR no.: </strong> {{ar}} <br>
+	      		<strong>SI no.: </strong> {{si}} <br>
+	      		<strong>Date issued: </strong> {{createDate}} <br>
+	      		
+	      		<br>
+	      		
+	      		<strong>Client name: </strong> {{client.name}} <br>
+	      		<strong>TIN: </strong> {{client.tin}} <br>
+	      		
+	      		<hr>
+	      		
+	      		<strong>Item List</strong>
+	      		<div class="border-left border-right">
+					<table class="table table-striped border-bottom">
+					  <thead>
+					    <tr>
+					      <th scope="col">Description</th>
+					      <th scope="col">Unit Price</th>
+					      <th scope="col">Quantity</th>
+					      <th scope="col">Amount</th>
+					    </tr>
+					  </thead>
+					  <tbody>
+					    <tr>
+					      <td>Item A</td>
+					      <td>P100.00</td>
+					      <td>5 pc</td>
+					      <td>P500.00</td>
+					    </tr>
+					  </tbody>
+					</table>
+				</div>
+				<strong>Grand total: </strong> P500.00
+	      	</div>
+	      	<!-- summary end -->
 	      </div>
 	      <!-- modal body end -->
 	      <div class="modal-footer">
@@ -310,6 +353,7 @@
 	    </div>
 	  </div>
 	</div>
+	<!-- new billing modal end -->
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
