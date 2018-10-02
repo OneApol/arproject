@@ -8,21 +8,79 @@
 </ul>
 <div class="container-fluid border border-top-0 rounded-bottom">
 	<br>
+			
+	<!-- dashboard start-->
 	<div class="row">
-		<div class="input-group col col-md-4">
-		  <div class="input-group-prepend">
-		    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</button>
-		    <div class="dropdown-menu">
-		      <a class="dropdown-item" href="#">Action</a>
-		      <a class="dropdown-item" href="#">Another action</a>
-		      <a class="dropdown-item" href="#">Something else here</a>
-		      <div role="separator" class="dropdown-divider"></div>
-		      <a class="dropdown-item" href="#">Separated link</a>
-		    </div>
-		  </div>
-		  <input type="text" class="form-control" aria-label="Text input with dropdown button">
+
+		<!-- filter -->
+		<div class="col col-md-4">
+			<div class="input-group" ng-controller="billingFilterController as bFilter">
+			  <div class="input-group-prepend">
+			    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ bFilter.modeName }}</button>
+			    <div class="dropdown-menu">
+			      	<a class="dropdown-item" href ng-click="bFilter.changeMode(0)">AR no.</a>
+			      	<a class="dropdown-item" href ng-click="bFilter.changeMode(1)">SI no.</a>
+			      	<div role="separator" class="dropdown-divider"></div>
+			      	<a class="dropdown-item" href ng-click="bFilter.changeMode(2)">Client Name</a>
+			      	<a class="dropdown-item" href ng-click="bFilter.changeMode(3)">Client TIN</a>
+			    </div>
+			  </div>
+			  <input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="Enter a filter here" name="billingFilter" ng-model="bFilter.filter">
+			</div>
 		</div>
-		<button class="btn btn-success col col-md-2">Create Billing</button>
+
+		<!-- create -->
+		<div class="col offset-md-6 col-md-2">
+			<button type="button" class="btn btn-block btn-success" data-toggle="modal" data-target="#newBillingModal">
+			<i class="fas fa-plus-circle"></i> &nbsp; Create New Billing
+			</button>
+		</div>
 	</div>
-	<hr>
+	<!-- dashboard end -->
+	
+	<br>
+	
+	<!-- content start -->
+	<div class="row">
+		<table class="table table-striped border-bottom">
+			<thead>
+			    <tr>
+					<th scope="col">#</th>
+					<th scope="col">AR no.</th>
+					<th scope="col">SI no.</th>
+					<th scope="col">Client Name</th>
+					<th scope="col">Client TIN</th>
+					<th scope="col">Balance</th>
+					<th scope="col">Date Issued</th>
+			    </tr>
+		  	</thead>
+		  	<tbody>
+			    <billing-row ng-repeat="billing in bControl.billings" index="{{ $index }}"></billing-row>
+		  	</tbody>
+		</table>
+	</div>
+	<!-- content end -->
 </div>
+
+<!-- new billing modal start -->
+<div class="modal fade" id="newBillingModal" tabindex="-1" role="dialog" aria-labelledby="newBillingModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="newBillingModalLabel">{{ some_data }} | Create New Billing</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <!-- modal body start -->
+      <div class="modal-body">
+      	testing
+      </div>
+      <!-- modal body end -->
+      <div class="modal-footer">
+        <button class="btn btn-primary">Proceed</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- new billing modal end -->

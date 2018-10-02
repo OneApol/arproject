@@ -4,12 +4,12 @@ app.config(["$routeProvider", function($routeProvider) {
 
     .when("/accounting/billing", {
     	templateUrl : "/app/components/accounting/billing/accounting.billingView.html",
-        controller: "billingController"
+        controller: "billingController as bControl"
     })
 
     .when("/accounting/collection", {
     	templateUrl : "/app/components/accounting/collection/accounting.collectionView.html",
-        controller: "collectionController"
+        controller: "collectionController as cControl"
     })
 
 	.when("/accounting", {
