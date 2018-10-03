@@ -1,0 +1,42 @@
+<!-- <tr>
+  	<th scope="row">{{ index }}</th>
+  	<td scope="row">{{ billing.ar }}</td>
+  	<td scope="row">{{ billing.si || "n/a"}}</td>
+ 	<td scope="row">{{ billing.company.name }}</td>
+ 	<td scope="row">{{ billing.company.tin }}</td>
+  	<td scope="row">{{ billing.amount }}</td>
+  	<td scope="row">{{ billing.date }}</td>
+</tr> -->
+
+<tr>
+  	<th scope="row">
+  		<a ng-click="billingSelect({index: index})" data-toggle="modal" data-target="#selectBillingModal" href>
+  			{{ index }}
+  		</a>
+  	</th>
+  	<th scope="row">
+  		<a ng-click="billingSelect({index: index})" data-toggle="modal" data-target="#selectBillingModal" href>
+  			{{ billing.ar }}
+  		</a>
+  	</th>
+  	<th scope="row">
+  		<a ng-click="billingSelect({index: index})" data-toggle="modal" data-target="#selectBillingModal" href>
+  			{{ billing.si || "n/a" }}
+  		</a>
+  	</th>
+  	<th scope="row">
+  		<a ng-click="billingSelect({index: index})" data-toggle="modal" data-target="#selectBillingModal" href>
+  			{{ billing.company.name }}
+  		</a>
+  	</th>
+  	<th scope="row">
+  		<a ng-click="billingSelect({index: index})" data-toggle="modal" data-target="#selectBillingModal" href>
+  			{{ billing.company.tin }}
+  		</a>
+  	</th>
+  	<th scope="row">
+  		<a ng-click="billingSelect({index: index})" data-toggle="modal" data-target="#selectBillingModal" href>
+  			{{ billing.date }}
+  		</a>
+  	</th>
+</tr>

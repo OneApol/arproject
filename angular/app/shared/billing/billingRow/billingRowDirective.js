@@ -4,7 +4,8 @@ app.directive("billingRow", function() {
 		restrict: "E",
 		scope: {
 			billing: "@",
-			index: "="
+			index: "=",
+			billingSelect: "&"
 		}
 	}
 });

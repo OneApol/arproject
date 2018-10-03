@@ -1,0 +1,11 @@
+<div>
+	<strong>AR no.: </strong> {{ billing.ar }} <br>
+	<strong>SI no.: </strong> {{ billing.si || "n/a"}} <br>
+	<strong>Date Issued: </strong> {{ billing.date }} <br>
+	<hr>
+	<strong>Client Name: </strong> {{ billing.client.name }} <br>
+	<strong>Client Type: </strong> {{ billing.client.type }} <br>
+	<strong>TIN: </strong> {{ billing.client.tin }} <br>
+	<hr>
+	<!-- table here -->
+</div>
